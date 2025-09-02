@@ -43,21 +43,27 @@ document.addEventListener('DOMContentLoaded', function() {
     const prevBtn = document.getElementById('prevBtn');
     const nextBtn = document.getElementById('nextBtn');
     const indicators = document.querySelectorAll('.indicator');
-    
+
+    console.log('Carousel elements:', { carousel, prevBtn, nextBtn, indicators });
+
     if (carousel) {
         let currentIndex = 0;
         const totalItems = 3;
-        
+
         // Function to update carousel position
         function updateCarousel() {
             const translateX = -currentIndex * 100;
             carousel.style.transform = `translateX(${translateX}%)`;
-            
+            console.log(`Carousel updated to index ${currentIndex}, translateX: ${translateX}%`);
+
             // Update indicators
             indicators.forEach((indicator, index) => {
                 indicator.classList.toggle('active', index === currentIndex);
             });
         }
+
+        // Initialize carousel position
+        updateCarousel();
         
         // Next button functionality
         if (nextBtn) {
