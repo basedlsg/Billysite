@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Function to update carousel position
         function updateCarousel() {
-            const translateX = -currentIndex * 100;
+            const translateX = -currentIndex * 33.333;
             carousel.style.transform = `translateX(${translateX}%)`;
             console.log(`Carousel updated to index ${currentIndex}, translateX: ${translateX}%`);
 
@@ -153,5 +153,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         if (prevBtn) prevBtn.addEventListener('mouseenter', stopAutoPlay);
         if (nextBtn) nextBtn.addEventListener('mouseenter', stopAutoPlay);
+    } else {
+        console.warn('Music carousel not found on this page');
     }
 });
