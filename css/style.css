@@ -10,41 +10,7 @@ body {
     height: 100vh;
 }
 
-/* Blurred Background Styles */
-.blurred-background {
-    position: relative;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    border: 5px solid red !important;
-}
-
-.blurred-background::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: inherit;
-    background-size: cover;
-    background-position: center;
-    filter: blur(1000px);
-    -webkit-filter: blur(1000px);
-    transform: scale(3.0);
-    z-index: -2;
-}
-
-.blurred-background::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.6);
-    z-index: -1;
-}
+/* Removed old blurred background styles - now using direct image method */
 
 /* Background Image Styles - EXACTLY like tour page */
 .background-image {
@@ -55,6 +21,11 @@ body {
     top: 0;
     left: 0;
     z-index: -1;
+    /* Mobile-specific fixes */
+    min-width: 100%;
+    min-height: 100%;
+    max-width: none;
+    max-height: none;
 }
 
 .countdown-container {
@@ -647,5 +618,19 @@ body[data-page="aimc"] #product-page .product-container {
     
     .music-cover-img {
         max-width: 250px;
+    }
+    
+    /* Mobile background image fixes */
+    .background-image {
+        position: absolute !important;
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        z-index: -1 !important;
+    }
+    
+    .countdown-container {
+        position: relative !important;
+        z-index: 1 !important;
     }
 }
