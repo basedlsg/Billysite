@@ -246,15 +246,7 @@ footer {
     background-position: center;
 }
 
-/* MADDOG Product Page Background */
-body[data-page="maddog"] #product-page .product-container {
-    background-image: url('../MADDOG_Capsule_Photo.webp');
-}
-
-/* AIMC Product Page Background */
-body[data-page="aimc"] #product-page .product-container {
-    background-image: url('../AIMC_Capsule_Photo.webp');
-}
+/* Product page backgrounds now handled by img tags with tour-graphic class */
 
 .product-tba {
     font-size: 72px;
